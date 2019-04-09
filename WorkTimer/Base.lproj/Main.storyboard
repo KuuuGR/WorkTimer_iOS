@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="width" secondItem="KsS-Pb-uWI" secondAttribute="height" multiplier="1:1" id="By4-N7-xvo"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="drink"/>
+                                <connections>
+                                    <action selector="drinkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcE-af-u1K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-2a-H0I">
                                 <rect key="frame" x="73.5" y="163.5" width="173" height="173"/>
@@ -31,10 +34,16 @@
                                     <constraint firstAttribute="width" secondItem="Yg5-2a-H0I" secondAttribute="height" multiplier="1:1" id="vu5-6j-b8M"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="jobOn01"/>
+                                <connections>
+                                    <action selector="jobButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="84y-Kk-LQo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-qc-SqG">
                                 <rect key="frame" x="112" y="366.5" width="96" height="96"/>
                                 <state key="normal" title="Button" image="eat"/>
+                                <connections>
+                                    <action selector="eatButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wf6-G1-Zjw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tog-Lr-xQ6">
                                 <rect key="frame" x="265" y="25" width="50" height="50"/>
@@ -68,6 +77,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="drinkButton" destination="KsS-Pb-uWI" id="guD-qG-aih"/>
+                        <outlet property="eatButton" destination="gBA-qc-SqG" id="Mlo-we-NdH"/>
+                        <outlet property="jobButton" destination="Yg5-2a-H0I" id="f7w-Bx-ZgQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,8 +97,8 @@
     </scenes>
     <resources>
         <image name="Arrow" width="380" height="380"/>
-        <image name="drink" width="846" height="980"/>
-        <image name="eat" width="346" height="346"/>
+        <image name="drink" width="412" height="412"/>
+        <image name="eat" width="412" height="412"/>
         <image name="jobOn01" width="218" height="220"/>
     </resources>
 </document>

@@ -147,8 +147,8 @@
     <resources>
         <image name="Arrow2" width="380" height="380"/>
         <image name="arrived" width="928" height="980"/>
-        <image name="drink" width="846" height="980"/>
-        <image name="eat" width="346" height="346"/>
+        <image name="drink" width="412" height="412"/>
+        <image name="eat" width="412" height="412"/>
         <image name="job" width="225" height="225"/>
         <image name="lived" width="512" height="415"/>
     </resources>

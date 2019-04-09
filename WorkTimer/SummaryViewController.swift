@@ -18,9 +18,6 @@ class SummaryViewController: UIViewController {
     
     @IBAction func BackButtonAction(_ sender: Any) {
         dismissDetail()
-        //dismiss(animated: true, completion: nil)
     }
     
-    
-
 }
