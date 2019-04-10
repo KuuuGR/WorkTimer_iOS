@@ -17,38 +17,61 @@ class MainViewController: UIViewController {
     
     var myWorkingData = workingData()
     var actualDateCount: Date?
+    var actualButtonPressed: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-
-        // Do any additional setup after loading the view.
     }
 
     
     @IBAction func drinkButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(drinkButton)
+        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
+        addTimeToEvent(buttonNr: actualButtonPressed, value: Int(TimeToAdd))
         actualDateCount = Date()
+        actualButtonPressed = 1
     }
     
     @IBAction func jobButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(jobButton)
+        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
+        addTimeToEvent(buttonNr: actualButtonPressed, value: Int(TimeToAdd))
         actualDateCount = Date()
+        actualButtonPressed = 2
     }
     
     @IBAction func eatButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(eatButton)
+        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
+        addTimeToEvent(buttonNr: actualButtonPressed, value: Int(TimeToAdd))
         actualDateCount = Date()
+        actualButtonPressed = 3
     }
     
     
+    
+    
+    func addTimeToEvent(buttonNr: Int, value: Int) {
+        
+        switch buttonNr {
+        case 1:
+            myWorkingData.coffeTimeSec += value
+        case 2:
+            myWorkingData.workTimeSec += value
+        case 3:
+            myWorkingData.eatTimeSec += value
+        default:
+            return
+        }
+    }
+    
     func onlyOneButtonMarked(_ button: UIButton) {
         
-        if (myWorkingData.startTime == nil) {
+        if (myWorkingData.startTime == nil) && (actualButtonPressed == 0) {
             myWorkingData.startTime = Date()
             actualDateCount = Date()
         }
-        print(String(button.accessibilityIdentifier ?? "0"))
         drinkButton.alpha = 0.2
         jobButton.alpha = 0.2
         eatButton.alpha = 0.2
@@ -68,11 +91,6 @@ class MainViewController: UIViewController {
         let result = formatter.string(from: timeCountStartingPoint)
         return result
     }
-    
-//    func intervalBetweenDates(myDate: Date?) -> String {
-//        guard let difference = String(myDate?.timeIntervalSinceNow * -1 ?? 0) else { return "error"}
-//        return difference
-//    }
     
     func secondsToHoursMinutesSeconds(seconds: Int) -> String {
         let actualHours = seconds / 3600
@@ -95,9 +113,7 @@ class MainViewController: UIViewController {
         summaryTupple[2] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.workTimeSec)) // current Job time
         summaryTupple[3] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.coffeTimeSec))// current drik time
         summaryTupple[4] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.eatTimeSec)) // current eat time
-        
-        let totalTime: Int = Int(myWorkingData.workTimeSec) + Int(myWorkingData.coffeTimeSec) + Int(myWorkingData.eatTimeSec)
-        summaryTupple[5] = secondsToHoursMinutes(seconds: totalTime) // time to login at work
+        summaryTupple[5] = secondsToHoursMinutes(seconds: Int(myWorkingData.workTimeSec)) // time to login at work
     }
     
 }
