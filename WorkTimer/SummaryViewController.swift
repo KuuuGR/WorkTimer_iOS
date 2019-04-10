@@ -25,6 +25,19 @@ class SummaryViewController: UIViewController {
         drinkLabel.text = summaryTupple[3]
         eatLabel.text = summaryTupple[4]
         logTimeLabel.text = summaryTupple[5]
+        
+        // show red color warning if the time to log in less then 6 hours
+        let delimiter = "H"
+        let newstr = summaryTupple[5]
+        var token = newstr.components(separatedBy: delimiter)
+        print ("to jest token: " + token[0])
+        if (Int(token[0]) ?? 0) < 6 {
+            logTimeLabel.textColor = UIColor.red
+        } else {
+            logTimeLabel.textColor = UIColor.cyan
+        }
+        
+        
     }
 
     

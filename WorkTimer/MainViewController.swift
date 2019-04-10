@@ -10,15 +10,17 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
     @IBOutlet weak var drinkButton: UIButton!
     @IBOutlet weak var jobButton: UIButton!
     @IBOutlet weak var eatButton: UIButton!
     
     var myWorkingData = workingData()
+    var actualDateCount: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
 
         // Do any additional setup after loading the view.
     }
@@ -26,14 +28,17 @@ class MainViewController: UIViewController {
     
     @IBAction func drinkButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(drinkButton)
+        actualDateCount = Date()
     }
     
     @IBAction func jobButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(jobButton)
+        actualDateCount = Date()
     }
     
     @IBAction func eatButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(eatButton)
+        actualDateCount = Date()
     }
     
     
@@ -41,6 +46,7 @@ class MainViewController: UIViewController {
         
         if (myWorkingData.startTime == nil) {
             myWorkingData.startTime = Date()
+            actualDateCount = Date()
         }
         print(String(button.accessibilityIdentifier ?? "0"))
         drinkButton.alpha = 0.2
@@ -55,23 +61,43 @@ class MainViewController: UIViewController {
         presentDetail(SummaryViewController.init())
     }
     
-    
-    func actualDate() -> String{
-        guard let timeCountStartingPoint = myWorkingData.startTime else { return "none" }
+    func stringDataFromDate(theDate: Date?, addSec: Int = 0) -> String {
+        guard let timeCountStartingPoint = theDate?.addingTimeInterval(TimeInterval(addSec)) else { return "none" }
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "HH:mm:ss"//"dd.MM.yyyy""HH:mm:ss.SSS"
         let result = formatter.string(from: timeCountStartingPoint)
         return result
     }
     
+//    func intervalBetweenDates(myDate: Date?) -> String {
+//        guard let difference = String(myDate?.timeIntervalSinceNow * -1 ?? 0) else { return "error"}
+//        return difference
+//    }
+    
+    func secondsToHoursMinutesSeconds(seconds: Int) -> String {
+        let actualHours = seconds / 3600
+        let actualMinutes = (seconds % 3600) / 60
+        let actualSeconds = (seconds % 3600) % 60
+        return ("\(actualHours) Hours \(actualMinutes) Minutes \(actualSeconds) Seconds")
+    }
+    
+    func secondsToHoursMinutes(seconds: Int) -> String {
+        let actualHours = seconds / 3600
+        let actualMinutes = (seconds % 3600) / 60
+        return ("\(actualHours)H \(actualMinutes)m")
+    }
+    
+    
     func setSummaryTupple(){
         
-        summaryTupple[0] = "must set"
-        summaryTupple[1] = "must set"
-        summaryTupple[2] = "must set"
-        summaryTupple[3] = "must set"
-        summaryTupple[4] = "must set"
-        summaryTupple[5] = "must set"
+        summaryTupple[0] = stringDataFromDate(theDate: myWorkingData.startTime)// start work time
+        summaryTupple[1] = stringDataFromDate(theDate: myWorkingData.startTime, addSec: 8 * 60 * 60)
+        summaryTupple[2] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.workTimeSec)) // current Job time
+        summaryTupple[3] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.coffeTimeSec))// current drik time
+        summaryTupple[4] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.eatTimeSec)) // current eat time
+        
+        let totalTime: Int = Int(myWorkingData.workTimeSec) + Int(myWorkingData.coffeTimeSec) + Int(myWorkingData.eatTimeSec)
+        summaryTupple[5] = secondsToHoursMinutes(seconds: totalTime) // time to login at work
     }
     
 }
