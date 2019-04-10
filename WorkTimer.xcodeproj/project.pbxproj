@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2235CF5D225DA5AC00A334D4 /* GlobalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2235CF5C225DA5AC00A334D4 /* GlobalValues.swift */; };
 		223DBB13225C602A00139E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223DBB12225C602A00139E23 /* AppDelegate.swift */; };
 		223DBB18225C602A00139E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223DBB16225C602A00139E23 /* Main.storyboard */; };
 		223DBB1A225C602C00139E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223DBB19225C602C00139E23 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2235CF5C225DA5AC00A334D4 /* GlobalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalValues.swift; sourceTree = "<group>"; };
 		223DBB0F225C602A00139E23 /* WorkTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223DBB12225C602A00139E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		223DBB17225C602A00139E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				223DBB28225C711400139E23 /* SummaryViewController.swift */,
 				223DBB24225C6F8C00139E23 /* MainViewController.swift */,
 				223DBB16225C602A00139E23 /* Main.storyboard */,
+				2235CF5C225DA5AC00A334D4 /* GlobalValues.swift */,
 				223DBB26225C700000139E23 /* Summary.storyboard */,
 				223DBB12225C602A00139E23 /* AppDelegate.swift */,
 				223DBB19225C602C00139E23 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			files = (
 				223DBB25225C6F8C00139E23 /* MainViewController.swift in Sources */,
 				223DBB13225C602A00139E23 /* AppDelegate.swift in Sources */,
+				2235CF5D225DA5AC00A334D4 /* GlobalValues.swift in Sources */,
 				223DBB29225C711400139E23 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

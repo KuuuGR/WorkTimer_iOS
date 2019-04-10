@@ -14,45 +14,65 @@ class MainViewController: UIViewController {
     @IBOutlet weak var jobButton: UIButton!
     @IBOutlet weak var eatButton: UIButton!
     
-    var currentSelectButton: Int = 0
-    
+    var myWorkingData = workingData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(currentSelectButton)
+
+
         // Do any additional setup after loading the view.
     }
 
     
     @IBAction func drinkButtonPressed(_ sender: Any) {
-        currentSelectButton = 1
         onlyOneButtonMarked(drinkButton)
     }
     
     @IBAction func jobButtonPressed(_ sender: Any) {
-        currentSelectButton = 2
         onlyOneButtonMarked(jobButton)
     }
     
     @IBAction func eatButtonPressed(_ sender: Any) {
-        currentSelectButton = 3
         onlyOneButtonMarked(eatButton)
     }
     
     
-    func onlyOneButtonMarked(_ Button: UIButton) {
-        print(currentSelectButton)
+    func onlyOneButtonMarked(_ button: UIButton) {
+        
+        if (myWorkingData.startTime == nil) {
+            myWorkingData.startTime = Date()
+        }
+        print(String(button.accessibilityIdentifier ?? "0"))
         drinkButton.alpha = 0.2
         jobButton.alpha = 0.2
         eatButton.alpha = 0.2
-        Button.alpha = 1
+        button.alpha = 1
     }
 
     @IBAction func summaryButtonPressed(_ sender: Any) {
+        
+        setSummaryTupple()
         presentDetail(SummaryViewController.init())
     }
     
+    
+    func actualDate() -> String{
+        guard let timeCountStartingPoint = myWorkingData.startTime else { return "none" }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let result = formatter.string(from: timeCountStartingPoint)
+        return result
+    }
+    
+    func setSummaryTupple(){
+        
+        summaryTupple[0] = "must set"
+        summaryTupple[1] = "must set"
+        summaryTupple[2] = "must set"
+        summaryTupple[3] = "must set"
+        summaryTupple[4] = "must set"
+        summaryTupple[5] = "must set"
+    }
     
 }
 

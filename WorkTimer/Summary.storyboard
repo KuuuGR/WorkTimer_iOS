@@ -138,6 +138,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N2u-xX-hAe"/>
                     </view>
+                    <connections>
+                        <outlet property="drinkLabel" destination="YYW-Az-V3q" id="vDa-hd-uuY"/>
+                        <outlet property="eatLabel" destination="ANf-FK-VN1" id="Jeq-8d-CQe"/>
+                        <outlet property="jobLabel" destination="cJl-tt-Xzd" id="xV1-dL-Fjo"/>
+                        <outlet property="logTimeLabel" destination="HCQ-1P-RGh" id="sTl-B7-L18"/>
+                        <outlet property="workEndLabel" destination="y84-My-0Uq" id="Hb0-LO-fdx"/>
+                        <outlet property="workStartLabel" destination="O9X-lb-ICt" id="6cW-eG-OqB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RG8-sk-Gf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
