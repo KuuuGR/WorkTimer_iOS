@@ -209,7 +209,7 @@
                             </view>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-rJ-VKM" userLabel="CenterButton">
                                 <rect key="frame" x="234" y="104" width="199" height="167"/>
-                                <state key="normal" title="Button" image="BackCard"/>
+                                <state key="normal" image="BackCard"/>
                                 <connections>
                                     <action selector="cardsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCb-pT-qUr"/>
                                 </connections>

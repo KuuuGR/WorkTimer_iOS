@@ -68,19 +68,24 @@ class MainViewController: UIViewController {
         print(sender.tag)
         for card in cardsCollection {
             if card.tag == sender.tag {
-                //card.isHidden = true
+                let imageBackName = "cardImage\(sender.tag)"
+                setDefaultBackgroundCards()
+                card.setImage(UIImage(named: imageBackName), for: .normal)
                 digitsValuesOnCards[sender.tag - 1] += 1
             }
             for label in numbersOnCards {
                 if sender.tag == label.tag {
-                    //digitsValuesOnCards[label.tag - 1] += 2
                     label.text = String(digitsValuesOnCards[label.tag - 1])
                 }
             }
         }
     }
     
-    
+    func setDefaultBackgroundCards(){
+        for card in cardsCollection {
+            card.setImage(#imageLiteral(resourceName: "BackCard"), for: .normal)
+        }
+    }
     
     func addTimeToEvent(buttonNr: Int, value: Int) {
         
