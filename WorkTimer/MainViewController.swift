@@ -14,8 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var drinkButton: UIButton!
     @IBOutlet weak var jobButton: UIButton!
     @IBOutlet weak var eatButton: UIButton!
-    
-    
+    @IBOutlet var cardsCollection: [UIButton]!
     
     
     
@@ -28,6 +27,9 @@ class MainViewController: UIViewController {
        
     }
 
+    deinit {
+        cardsCollection.removeAll()
+    }
     
     @IBAction func drinkButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(drinkButton)
@@ -53,6 +55,14 @@ class MainViewController: UIViewController {
         actualButtonPressed = 3
     }
     
+    @IBAction func cardsButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+        for card in cardsCollection {
+            if card.tag == sender.tag {
+                card.isHidden = true
+            }
+        }
+    }
     
     
     
@@ -121,7 +131,6 @@ class MainViewController: UIViewController {
     }
     
 }
-
 
 extension UIViewController {
     
