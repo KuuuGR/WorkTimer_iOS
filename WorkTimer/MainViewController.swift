@@ -15,6 +15,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var jobButton: UIButton!
     @IBOutlet weak var eatButton: UIButton!
     
+    
+    
+    
+    
     var myWorkingData = workingData()
     var actualDateCount: Date?
     var actualButtonPressed: Int = 0

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="WorkTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsS-Pb-uWI">
-                                <rect key="frame" x="112" y="37.5" width="96" height="96"/>
+                                <rect key="frame" x="296" y="15" width="75" height="75"/>
                                 <accessibility key="accessibilityConfiguration" identifier="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KsS-Pb-uWI" secondAttribute="height" multiplier="1:1" id="By4-N7-xvo"/>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-qc-SqG">
-                                <rect key="frame" x="112" y="366.5" width="96" height="96"/>
+                                <rect key="frame" x="296" y="285" width="75" height="75"/>
                                 <accessibility key="accessibilityConfiguration" identifier="3"/>
                                 <state key="normal" title="Button" image="eat"/>
                                 <connections>
@@ -38,8 +38,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tog-Lr-xQ6">
-                                <rect key="frame" x="265" y="25" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="612" y="5" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dLi-9r-Yfk"/>
                                     <constraint firstAttribute="width" secondItem="tog-Lr-xQ6" secondAttribute="height" multiplier="1:1" id="hWG-XV-3UL"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-2a-H0I">
-                                <rect key="frame" x="73.5" y="163.5" width="173" height="173"/>
+                                <rect key="frame" x="266" y="120" width="135" height="135"/>
                                 <accessibility key="accessibilityConfiguration" identifier="2"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Yg5-2a-H0I" secondAttribute="height" multiplier="1:1" id="vu5-6j-b8M"/>
@@ -63,22 +63,205 @@
                                     <action selector="jobButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="84y-Kk-LQo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-rJ-VKM" userLabel="CenterButton">
+                                <rect key="frame" x="234" y="104" width="199" height="167"/>
+                                <state key="normal" title="Button" image="BackCard"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeX-yG-GAI" userLabel="UpperView">
+                                <rect key="frame" x="234" y="15" width="199" height="81"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9k-fK-2ND">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="AeH-yJ-qa5"/>
+                                            <constraint firstAttribute="width" constant="94" id="bZf-8N-xkT"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyV-Bc-zrB">
+                                        <rect key="frame" x="105" y="0.0" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="7My-Di-0TO"/>
+                                            <constraint firstAttribute="height" constant="80" id="la4-T8-sQE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="199" id="7yd-v1-DEP"/>
+                                    <constraint firstItem="XyV-Bc-zrB" firstAttribute="top" secondItem="aeX-yG-GAI" secondAttribute="top" id="IRF-mV-nKi"/>
+                                    <constraint firstItem="p9k-fK-2ND" firstAttribute="leading" secondItem="aeX-yG-GAI" secondAttribute="leading" id="IyK-Mm-ok6"/>
+                                    <constraint firstItem="p9k-fK-2ND" firstAttribute="top" secondItem="aeX-yG-GAI" secondAttribute="top" id="J0J-da-gev"/>
+                                    <constraint firstAttribute="trailing" secondItem="XyV-Bc-zrB" secondAttribute="trailing" id="nFD-j3-KUf"/>
+                                    <constraint firstAttribute="height" constant="81" id="qRP-9J-0Ig"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBb-eW-Xc8" userLabel="BottomView">
+                                <rect key="frame" x="234" y="279" width="199" height="81"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mic-xp-O45">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="MTI-Zr-bjk"/>
+                                            <constraint firstAttribute="height" constant="80" id="yDg-Vp-eaY"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVQ-0N-lr5">
+                                        <rect key="frame" x="105" y="0.0" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="OfF-rK-HnB"/>
+                                            <constraint firstAttribute="height" constant="80" id="xp0-4K-odK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GVQ-0N-lr5" firstAttribute="top" secondItem="uBb-eW-Xc8" secondAttribute="top" id="2NZ-xU-EXx"/>
+                                    <constraint firstAttribute="width" constant="199" id="DFZ-Op-FpJ"/>
+                                    <constraint firstItem="Mic-xp-O45" firstAttribute="leading" secondItem="uBb-eW-Xc8" secondAttribute="leading" id="G89-Cm-vHQ"/>
+                                    <constraint firstItem="Mic-xp-O45" firstAttribute="top" secondItem="uBb-eW-Xc8" secondAttribute="top" id="gg9-a1-X9g"/>
+                                    <constraint firstAttribute="trailing" secondItem="GVQ-0N-lr5" secondAttribute="trailing" id="ifD-sW-d65"/>
+                                    <constraint firstAttribute="height" constant="81" id="r3f-Q0-Cjp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YR-pt-Kmv" userLabel="LeftView">
+                                <rect key="frame" x="129" y="103" width="97" height="169"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJq-Gb-0Ld">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="8aO-yo-MyP"/>
+                                            <constraint firstAttribute="height" constant="80" id="gpY-LV-YpJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr8-su-rVw">
+                                        <rect key="frame" x="0.0" y="89" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="Q96-tU-ZbV"/>
+                                            <constraint firstAttribute="height" constant="80" id="kd1-RJ-k4d"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="1bR-5i-f37"/>
+                                    <constraint firstItem="EJq-Gb-0Ld" firstAttribute="top" secondItem="6YR-pt-Kmv" secondAttribute="top" id="6D9-59-yb0"/>
+                                    <constraint firstItem="EJq-Gb-0Ld" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="leading" id="RnE-EJ-W5k"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tr8-su-rVw" secondAttribute="bottom" id="nZ6-Rd-8kP"/>
+                                    <constraint firstAttribute="height" constant="169" id="pso-4F-uaZ"/>
+                                    <constraint firstItem="Tr8-su-rVw" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="leading" id="rXH-0x-sNq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-o3-ffE" userLabel="RightView">
+                                <rect key="frame" x="441" y="103" width="97" height="169"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWE-GT-Kgi">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="1Su-rB-6GJ"/>
+                                            <constraint firstAttribute="width" constant="94" id="odL-i2-KV5"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey7-TL-mDg">
+                                        <rect key="frame" x="0.0" y="89" width="94" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8BG-ag-acW"/>
+                                            <constraint firstAttribute="width" constant="94" id="bTG-3K-nNf"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="BackCard"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SWE-GT-Kgi" firstAttribute="top" secondItem="ltP-o3-ffE" secondAttribute="top" id="0Em-XI-53U"/>
+                                    <constraint firstItem="SWE-GT-Kgi" firstAttribute="leading" secondItem="ltP-o3-ffE" secondAttribute="leading" id="4pa-qs-pdT"/>
+                                    <constraint firstItem="ey7-TL-mDg" firstAttribute="leading" secondItem="ltP-o3-ffE" secondAttribute="leading" id="ACX-4E-2VX"/>
+                                    <constraint firstAttribute="height" constant="169" id="dEI-Na-rKC"/>
+                                    <constraint firstAttribute="width" constant="97" id="gsS-by-pSf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ey7-TL-mDg" secondAttribute="bottom" id="qvk-pZ-V45"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxM-kx-tR2" userLabel="UL_Button">
+                                <rect key="frame" x="132" y="15" width="94" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0Jl-TM-iw5"/>
+                                    <constraint firstAttribute="width" constant="94" id="Nk2-kk-Ywb"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="BackCard"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUw-Sr-eFv" userLabel="UR_Button">
+                                <rect key="frame" x="441" y="15" width="94" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="jtN-Mh-rqv"/>
+                                    <constraint firstAttribute="height" constant="80" id="lOD-xa-K9L"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="BackCard"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-Ew-ELN" userLabel="LR_Button">
+                                <rect key="frame" x="441" y="280" width="94" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="bAs-B4-65l"/>
+                                    <constraint firstAttribute="width" constant="94" id="lJ4-sB-xVU"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="BackCard"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shQ-9U-MJD" userLabel="LL_Button">
+                                <rect key="frame" x="132" y="280" width="94" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Vbd-TG-ncu"/>
+                                    <constraint firstAttribute="width" constant="94" id="o6T-y2-E7X"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="BackCard"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen3" translatesAutoresizingMaskIntoConstraints="NO" id="aNX-14-QIW">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UgA-rJ-VKM" firstAttribute="top" secondItem="aeX-yG-GAI" secondAttribute="bottom" constant="8" id="0mO-Aa-VTe"/>
+                            <constraint firstItem="aNX-14-QIW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2a3-E4-1KF"/>
+                            <constraint firstItem="uBb-eW-Xc8" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="trailing" constant="8" id="39P-8S-I0L"/>
                             <constraint firstItem="gBA-qc-SqG" firstAttribute="height" secondItem="KsS-Pb-uWI" secondAttribute="height" id="3JN-Ju-YDJ"/>
                             <constraint firstItem="gBA-qc-SqG" firstAttribute="top" secondItem="Yg5-2a-H0I" secondAttribute="bottom" constant="30" id="3Ji-oJ-lU1"/>
+                            <constraint firstItem="xRe-Ew-ELN" firstAttribute="leading" secondItem="uBb-eW-Xc8" secondAttribute="trailing" constant="8" id="3NU-65-3F2"/>
+                            <constraint firstItem="ltP-o3-ffE" firstAttribute="leading" secondItem="aeX-yG-GAI" secondAttribute="trailing" constant="8" id="5wt-6N-2SO"/>
                             <constraint firstItem="KsS-Pb-uWI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="7ji-0r-Ehc"/>
                             <constraint firstItem="KsS-Pb-uWI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Dib-Dr-hrx"/>
+                            <constraint firstItem="6YR-pt-Kmv" firstAttribute="top" secondItem="gxM-kx-tR2" secondAttribute="bottom" constant="8" id="G5f-0z-tXU"/>
+                            <constraint firstItem="ltP-o3-ffE" firstAttribute="leading" secondItem="UgA-rJ-VKM" secondAttribute="trailing" constant="8" id="Goe-iQ-2ko"/>
                             <constraint firstItem="Yg5-2a-H0I" firstAttribute="height" secondItem="KsS-Pb-uWI" secondAttribute="height" multiplier="1.8" id="HeM-kz-e5e"/>
+                            <constraint firstItem="uBb-eW-Xc8" firstAttribute="top" secondItem="UgA-rJ-VKM" secondAttribute="bottom" constant="8" id="Hqr-Hc-aaa"/>
+                            <constraint firstItem="aNX-14-QIW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Q4j-ye-gct"/>
+                            <constraint firstItem="uBb-eW-Xc8" firstAttribute="leading" secondItem="shQ-9U-MJD" secondAttribute="trailing" constant="8" id="WIF-lR-lxk"/>
                             <constraint firstItem="gBA-qc-SqG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X3b-Xt-GEy"/>
+                            <constraint firstItem="ltP-o3-ffE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="XEo-5y-GdE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aNX-14-QIW" secondAttribute="bottom" id="XMk-aG-8LQ"/>
+                            <constraint firstItem="aeX-yG-GAI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZIL-XZ-OxC"/>
+                            <constraint firstItem="xRe-Ew-ELN" firstAttribute="top" secondItem="ltP-o3-ffE" secondAttribute="bottom" constant="8" id="aaq-gF-Y7x"/>
+                            <constraint firstItem="6YR-pt-Kmv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="dD2-Jv-YkY"/>
+                            <constraint firstItem="aeX-yG-GAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="eNy-Zx-cAk"/>
                             <constraint firstItem="gBA-qc-SqG" firstAttribute="width" secondItem="KsS-Pb-uWI" secondAttribute="width" id="eWC-YN-ReX"/>
+                            <constraint firstItem="shQ-9U-MJD" firstAttribute="top" secondItem="6YR-pt-Kmv" secondAttribute="bottom" constant="8" id="gVi-ZJ-pJD"/>
+                            <constraint firstItem="aNX-14-QIW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gfm-ar-mjY"/>
+                            <constraint firstItem="aeX-yG-GAI" firstAttribute="leading" secondItem="gxM-kx-tR2" secondAttribute="trailing" constant="8" id="ip9-p5-zIJ"/>
                             <constraint firstItem="tog-Lr-xQ6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KsS-Pb-uWI" secondAttribute="trailing" constant="8" symbolic="YES" id="jgU-tO-aCO"/>
                             <constraint firstItem="Yg5-2a-H0I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kYf-uj-ugN"/>
                             <constraint firstItem="Yg5-2a-H0I" firstAttribute="top" secondItem="KsS-Pb-uWI" secondAttribute="bottom" constant="30" id="pJz-ZP-9FC"/>
+                            <constraint firstItem="aeX-yG-GAI" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="trailing" constant="8" id="pqT-dV-wAb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tog-Lr-xQ6" secondAttribute="trailing" constant="5" id="rdf-vk-32k"/>
+                            <constraint firstItem="UgA-rJ-VKM" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="trailing" constant="8" id="rpM-9k-Hcw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uBb-eW-Xc8" secondAttribute="bottom" constant="15" id="sD3-8g-6Ub"/>
+                            <constraint firstItem="ltP-o3-ffE" firstAttribute="top" secondItem="EUw-Sr-eFv" secondAttribute="bottom" constant="8" id="tPM-tB-zVF"/>
                             <constraint firstItem="tog-Lr-xQ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="tql-s4-WmB"/>
                             <constraint firstItem="Yg5-2a-H0I" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ts7-gh-WH8"/>
+                            <constraint firstItem="EUw-Sr-eFv" firstAttribute="leading" secondItem="aeX-yG-GAI" secondAttribute="trailing" constant="8" id="xaN-D3-T2S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -90,6 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.03448275862069" y="47.200000000000003"/>
         </scene>
         <!--Summary-->
         <scene sceneID="Npw-MW-fpt">
@@ -102,6 +286,8 @@
     </scenes>
     <resources>
         <image name="Arrow" width="380" height="380"/>
+        <image name="BackCard" width="1231" height="1236"/>
+        <image name="Screen3" width="1245" height="1067"/>
         <image name="drink" width="412" height="412"/>
         <image name="eat" width="412" height="412"/>
         <image name="jobOn01" width="218" height="220"/>
