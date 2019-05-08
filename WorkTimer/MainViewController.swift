@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var jobButton: UIButton!
     @IBOutlet weak var eatButton: UIButton!
     @IBOutlet var cardsCollection: [UIButton]!
+    @IBOutlet var numbersOnCards: [UILabel]!
+    
     
     
     
@@ -22,13 +24,20 @@ class MainViewController: UIViewController {
     var actualDateCount: Date?
     var actualButtonPressed: Int = 0
     
+    var digitsValuesOnCards = Array(repeating: 0, count: 13)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for label in numbersOnCards {
+            label.text = String(digitsValuesOnCards[label.tag - 1])
+        }
        
     }
 
     deinit {
         cardsCollection.removeAll()
+        numbersOnCards.removeAll()
     }
     
     @IBAction func drinkButtonPressed(_ sender: Any) {
@@ -59,7 +68,14 @@ class MainViewController: UIViewController {
         print(sender.tag)
         for card in cardsCollection {
             if card.tag == sender.tag {
-                card.isHidden = true
+                //card.isHidden = true
+                digitsValuesOnCards[sender.tag - 1] += 1
+            }
+            for label in numbersOnCards {
+                if sender.tag == label.tag {
+                    //digitsValuesOnCards[label.tag - 1] += 2
+                    label.text = String(digitsValuesOnCards[label.tag - 1])
+                }
             }
         }
     }
