@@ -130,7 +130,6 @@ class MainViewController: UIViewController {
     
     
     
-    
     func setDefaultBackgroundCards(){
         for card in cardsCollection {
             card.setImage(#imageLiteral(resourceName: "BackCard"), for: .normal)
@@ -173,9 +172,11 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func summaryButtonPressed(_ sender: Any) {
-        
-        setSummaryTupple()
-        presentDetail(SummaryViewController.init())
+        if actualCardActive != 13 {
+            setTimesTupple()
+            setSummaryTupple()
+            presentDetail(SummaryViewController.init())
+        }
     }
     
     func stringDataFromDate(theDate: Date?, addSec: Int = 0) -> String {
@@ -204,10 +205,17 @@ class MainViewController: UIViewController {
         
         summaryTupple[0] = stringDataFromDate(theDate: myWorkingData.startTime)// start work time
         summaryTupple[1] = stringDataFromDate(theDate: myWorkingData.startTime, addSec: 8 * 60 * 60)
+        
         summaryTupple[2] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.workTimeSec)) // current Job time
         summaryTupple[3] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.coffeTimeSec))// current drik time
         summaryTupple[4] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.eatTimeSec)) // current eat time
         summaryTupple[5] = secondsToHoursMinutes(seconds: Int(myWorkingData.workTimeSec)) // time to login at work
+    }
+    
+    func setTimesTupple(){
+        for i in 0...12 {
+        timesTupple[i] = secondsToHoursMinutesSeconds(seconds: myWorkingData.cardTimeSec[i])
+        }
     }
     
 }

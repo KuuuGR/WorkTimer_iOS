@@ -9,6 +9,7 @@
 import Foundation
 
 var summaryTupple: [String] = ["","","","","",""]
+var timesTupple: [String] = ["","","","","","","","","","","","",""]
 
 struct workingData {
     var startTime: Date?

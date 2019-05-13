@@ -17,25 +17,37 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var eatLabel: UILabel!
     @IBOutlet weak var logTimeLabel: UILabel!
     
+    @IBOutlet var resultTimeLabels: [UILabel]!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         workStartLabel.text = summaryTupple[0]
         workEndLabel.text = summaryTupple[1]
-        jobLabel.text = summaryTupple[2]
-        drinkLabel.text = summaryTupple[3]
-        eatLabel.text = summaryTupple[4]
-        logTimeLabel.text = summaryTupple[5]
+        //jobLabel.text = summaryTupple[2]
+        //drinkLabel.text = summaryTupple[3]
+        //eatLabel.text = summaryTupple[4]
+        logTimeLabel.text = timesTupple[0]
+        
+        for label in resultTimeLabels {
+            label.text = timesTupple[label.tag]
+        }
         
         // show red color warning if the time to log in less then 6 hours
-        let delimiter = "H"
-        let newstr = summaryTupple[5]
-        var token = newstr.components(separatedBy: delimiter)
-        if (Int(token[0]) ?? 0) < 6 {
-            logTimeLabel.textColor = UIColor(red: 181/255, green: 64/255, blue: 44/255, alpha: 1.00)
-        } else {
-            logTimeLabel.textColor = UIColor(red: 60/255, green: 178/255, blue: 226/255, alpha: 1.00)
+        guard timesTupple[0] != "" else {
+            return logTimeLabel.text = "back & tap the card"
         }
+            let newstr = timesTupple[0]
+            var token = newstr.components(separatedBy: ["h", "m", "s"])
+        
+            logTimeLabel.text = ("\(token[0])h \(token[1])m")
+        
+            if (Int(token[0]) ?? 0) < 6 {
+                logTimeLabel.textColor = UIColor(red: 181/255, green: 64/255, blue: 44/255, alpha: 1.00)
+            } else {
+                logTimeLabel.textColor = UIColor(red: 60/255, green: 178/255, blue: 226/255, alpha: 1.00)
+            }
         
         
     }
