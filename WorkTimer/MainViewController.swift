@@ -173,7 +173,7 @@ class MainViewController: UIViewController {
         let actualHours = seconds / 3600
         let actualMinutes = (seconds % 3600) / 60
         let actualSeconds = (seconds % 3600) % 60
-        return ("\(actualHours) Hours \(actualMinutes) Minutes \(actualSeconds) Seconds")
+        return ("\(actualHours) h \(actualMinutes) m \(actualSeconds) s")
     }
     
     func secondsToHoursMinutes(seconds: Int) -> String {
