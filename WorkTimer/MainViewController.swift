@@ -34,8 +34,7 @@ class MainViewController: UIViewController {
             digitsValuesOnCards[i] = 0
             myWorkingData.cardTimeSec[i] = 0
         }
-        summaryTupple[0] = ""
-        summaryTupple[1] = ""
+        summaryTupple = ["","",""]
         myWorkingData.startTime = nil
         actualCardActive = 13
         setDefaultBackgroundCards()
@@ -146,6 +145,14 @@ class MainViewController: UIViewController {
         
         summaryTupple[0] = stringDataFromDate(theDate: myWorkingData.startTime)// start work time
         summaryTupple[1] = stringDataFromDate(theDate: myWorkingData.startTime, addSec: 8 * 60 * 60)
+        
+        for i in 0...12 {
+            if i == 0 || i >= 7 {
+          myWorkingData.summaryTime += myWorkingData.cardTimeSec[i]
+            }
+        }
+        
+        summaryTupple[2] = secondsToHoursMinutesSeconds(seconds: myWorkingData.summaryTime)
     }
     
     func setTimesTupple(){

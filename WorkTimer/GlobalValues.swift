@@ -8,10 +8,11 @@
 
 import Foundation
 
-var summaryTupple: [String] = ["",""]
+var summaryTupple: [String] = ["","",""]
 var timesTupple: [String] = ["","","","","","","","","","","","",""]
 
 struct workingData {
+    var summaryTime: Int = 0
     var startTime: Date?
     var cardTimeSec: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0]
 }

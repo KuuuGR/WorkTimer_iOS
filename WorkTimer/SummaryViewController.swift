@@ -25,7 +25,7 @@ class SummaryViewController: UIViewController {
         workStartLabel.text = summaryTupple[0]
         workEndLabel.text = summaryTupple[1]
 
-        logTimeLabel.text = timesTupple[0]
+        logTimeLabel.text = summaryTupple[2]
         
         for label in resultTimeLabels {
             label.text = timesTupple[label.tag]

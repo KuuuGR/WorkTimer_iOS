@@ -364,19 +364,19 @@
     <resources>
         <image name="Arrow2" width="380" height="380"/>
         <image name="arrived" width="928" height="980"/>
-        <image name="cardImage0" width="147" height="155"/>
-        <image name="cardImage1" width="512" height="512"/>
-        <image name="cardImage10" width="702" height="714"/>
-        <image name="cardImage11" width="163" height="168"/>
-        <image name="cardImage12" width="302" height="244"/>
-        <image name="cardImage2" width="316" height="296"/>
-        <image name="cardImage3" width="1500" height="1503"/>
-        <image name="cardImage4" width="348" height="348"/>
-        <image name="cardImage5" width="630" height="630"/>
-        <image name="cardImage6" width="244" height="244"/>
-        <image name="cardImage7" width="136" height="122"/>
-        <image name="cardImage8" width="148" height="114"/>
-        <image name="cardImage9" width="583" height="538"/>
+        <image name="cardImage0" width="199" height="167"/>
+        <image name="cardImage1" width="199" height="167"/>
+        <image name="cardImage10" width="199" height="167"/>
+        <image name="cardImage11" width="199" height="167"/>
+        <image name="cardImage12" width="199" height="167"/>
+        <image name="cardImage2" width="199" height="167"/>
+        <image name="cardImage3" width="199" height="167"/>
+        <image name="cardImage4" width="199" height="167"/>
+        <image name="cardImage5" width="256" height="256"/>
+        <image name="cardImage6" width="199" height="167"/>
+        <image name="cardImage7" width="199" height="167"/>
+        <image name="cardImage8" width="199" height="167"/>
+        <image name="cardImage9" width="199" height="167"/>
         <image name="lived" width="512" height="415"/>
     </resources>
 </document>
