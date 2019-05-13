@@ -24,7 +24,6 @@ class SummaryViewController: UIViewController {
         
         workStartLabel.text = summaryTupple[0]
         workEndLabel.text = summaryTupple[1]
-
         logTimeLabel.text = summaryTupple[2]
         
         for label in resultTimeLabels {
@@ -32,10 +31,10 @@ class SummaryViewController: UIViewController {
         }
         
         // show red color warning if the time to log in less then 6 hours
-        guard timesTupple[0] != "" else {
+        guard summaryTupple[2] != "" else {
             return logTimeLabel.text = "back & tap the card"
         }
-            let newstr = timesTupple[0]
+            let newstr = summaryTupple[2]
             var token = newstr.components(separatedBy: ["h", "m", "s"])
         
             logTimeLabel.text = ("\(token[0])h \(token[1])m")
