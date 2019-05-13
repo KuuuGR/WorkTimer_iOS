@@ -10,17 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    
-    @IBOutlet weak var drinkButton: UIButton!
-    @IBOutlet weak var jobButton: UIButton!
-    @IBOutlet weak var eatButton: UIButton!
     @IBOutlet var cardsCollection: [UIButton]!
     @IBOutlet var numbersOnCards: [UILabel]!
     
-    
     var myWorkingData = workingData()
     var actualDateCount: Date?
-    var actualButtonPressed: Int = 0
     
     var digitsValuesOnCards = Array(repeating: 0, count: 13)
     var actualCardActive: Int = 13
@@ -28,7 +22,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNumbersOnCards()
-       
     }
 
     deinit {
@@ -47,31 +40,6 @@ class MainViewController: UIViewController {
         setNumbersOnCards()
     }
     
-    
-    @IBAction func drinkButtonPressed(_ sender: Any) {
-        onlyOneButtonMarked(drinkButton)
-        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
-        addTimeToEvent(buttonNr: actualButtonPressed, value: Int(TimeToAdd))
-        actualDateCount = Date()
-        actualButtonPressed = 1
-    }
-    
-    @IBAction func jobButtonPressed(_ sender: Any) {
-        onlyOneButtonMarked(jobButton)
-        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
-        addTimeToEvent(buttonNr: actualButtonPressed, value: Int(TimeToAdd))
-        actualDateCount = Date()
-        actualButtonPressed = 2
-    }
-    
-    @IBAction func eatButtonPressed(_ sender: Any) {
-        onlyOneButtonMarked(eatButton)
-        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
-        addTimeToEvent(buttonNr: actualButtonPressed, value: Int(TimeToAdd))
-        actualDateCount = Date()
-        actualButtonPressed = 3
-    }
-    
     @IBAction func cardsButtonPressed(_ sender: UIButton) {
         print(sender.tag)
         
@@ -86,7 +54,6 @@ class MainViewController: UIViewController {
         addTimeToEvent(buttonNr: actualCardActive, value: Int(TimeToAdd))
         actualDateCount = Date()
         actualCardActive = sender.tag
-        print(myWorkingData) //TODO: Remove line
         
         for card in cardsCollection {
             if card.tag == sender.tag {
@@ -111,7 +78,6 @@ class MainViewController: UIViewController {
                 card.setImage(UIImage(named: imageBackName), for: .normal)
                 card.alpha = 0.5
         }
-        
     }
     // info : Hide all cards on relase (only active is stay) 
     @IBAction func infoButtonReleased(_ sender: UIButton) {
@@ -125,18 +91,15 @@ class MainViewController: UIViewController {
                 card.setImage(UIImage(named: imageBackName), for: .normal)
             }
         }
-        
     }
     
-    
-    
-    func setDefaultBackgroundCards(){
+    func setDefaultBackgroundCards() {
         for card in cardsCollection {
             card.setImage(#imageLiteral(resourceName: "BackCard"), for: .normal)
         }
     }
     
-    func setNumbersOnCards(){
+    func setNumbersOnCards() {
         for label in numbersOnCards {
             label.text = String(digitsValuesOnCards[label.tag])
         }
@@ -144,33 +107,10 @@ class MainViewController: UIViewController {
     
     func addTimeToEvent(buttonNr: Int, value: Int) {
         
-        
         myWorkingData.cardTimeSec[buttonNr] += value
         
-//        switch buttonNr {
-//        case 1:
-//            myWorkingData.coffeTimeSec += value
-//        case 2:
-//            myWorkingData.workTimeSec += value
-//        case 3:
-//            myWorkingData.eatTimeSec += value
-//        default:
-//            return
-//        }
     }
     
-    func onlyOneButtonMarked(_ button: UIButton) {
-        
-        if (myWorkingData.startTime == nil) && (actualButtonPressed == 0) {
-            myWorkingData.startTime = Date()
-            actualDateCount = Date()
-        }
-        drinkButton.alpha = 0.2
-        jobButton.alpha = 0.2
-        eatButton.alpha = 0.2
-        button.alpha = 1
-    }
-
     @IBAction func summaryButtonPressed(_ sender: Any) {
         if actualCardActive != 13 {
             setTimesTupple()
@@ -200,16 +140,10 @@ class MainViewController: UIViewController {
         return ("\(actualHours)h \(actualMinutes)m")
     }
     
-    
     func setSummaryTupple(){
         
         summaryTupple[0] = stringDataFromDate(theDate: myWorkingData.startTime)// start work time
         summaryTupple[1] = stringDataFromDate(theDate: myWorkingData.startTime, addSec: 8 * 60 * 60)
-        
-        summaryTupple[2] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.workTimeSec)) // current Job time
-        summaryTupple[3] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.coffeTimeSec))// current drik time
-        summaryTupple[4] = secondsToHoursMinutesSeconds(seconds: Int(myWorkingData.eatTimeSec)) // current eat time
-        summaryTupple[5] = secondsToHoursMinutes(seconds: Int(myWorkingData.workTimeSec)) // time to login at work
     }
     
     func setTimesTupple(){
@@ -220,6 +154,8 @@ class MainViewController: UIViewController {
     
 }
 
+
+// move to next (result) screen from right
 extension UIViewController {
     
     func presentDetail(_ viewControllerToPresent: UIViewController) {

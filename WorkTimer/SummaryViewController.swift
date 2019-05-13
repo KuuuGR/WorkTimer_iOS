@@ -19,15 +19,12 @@ class SummaryViewController: UIViewController {
     
     @IBOutlet var resultTimeLabels: [UILabel]!
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         workStartLabel.text = summaryTupple[0]
         workEndLabel.text = summaryTupple[1]
-        //jobLabel.text = summaryTupple[2]
-        //drinkLabel.text = summaryTupple[3]
-        //eatLabel.text = summaryTupple[4]
+
         logTimeLabel.text = timesTupple[0]
         
         for label in resultTimeLabels {
@@ -48,10 +45,7 @@ class SummaryViewController: UIViewController {
             } else {
                 logTimeLabel.textColor = UIColor(red: 60/255, green: 178/255, blue: 226/255, alpha: 1.00)
             }
-        
-        
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
