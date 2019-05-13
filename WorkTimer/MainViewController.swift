@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
             digitsValuesOnCards[i] = 0
             myWorkingData.cardTimeSec[i] = 0
         }
+        summaryTupple[0] = ""
+        summaryTupple[1] = ""
         myWorkingData.startTime = nil
         actualCardActive = 13
         setDefaultBackgroundCards()
