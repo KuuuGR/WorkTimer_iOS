@@ -25,13 +25,11 @@ class MainViewController: UIViewController {
     var actualButtonPressed: Int = 0
     
     var digitsValuesOnCards = Array(repeating: 0, count: 13)
+    var actualCardActive: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for label in numbersOnCards {
-            label.text = String(digitsValuesOnCards[label.tag - 1])
-        }
+        setNumbersOnCards()
        
     }
 
@@ -39,6 +37,15 @@ class MainViewController: UIViewController {
         cardsCollection.removeAll()
         numbersOnCards.removeAll()
     }
+    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        for i in 0..<13 {
+            digitsValuesOnCards[i] = 0
+        }
+        setDefaultBackgroundCards()
+        setNumbersOnCards()
+    }
+    
     
     @IBAction func drinkButtonPressed(_ sender: Any) {
         onlyOneButtonMarked(drinkButton)
@@ -66,6 +73,7 @@ class MainViewController: UIViewController {
     
     @IBAction func cardsButtonPressed(_ sender: UIButton) {
         print(sender.tag)
+        actualCardActive = sender.tag
         for card in cardsCollection {
             if card.tag == sender.tag {
                 let imageBackName = "cardImage\(sender.tag)"
@@ -81,9 +89,43 @@ class MainViewController: UIViewController {
         }
     }
     
+    // info : Show all cards on tap
+    @IBAction func infoButtonTouched(_ sender: UIButton) {
+        print("Preston")
+        for card in cardsCollection {
+                let imageBackName = "cardImage\(card.tag)"
+                card.setImage(UIImage(named: imageBackName), for: .normal)
+                card.alpha = 0.5
+        }
+        
+    }
+    // info : Hide all cards on relase (only active is stay) 
+    @IBAction func infoButtonReleased(_ sender: UIButton) {
+        print("Unpreston")
+        setDefaultBackgroundCards()
+        
+        for card in cardsCollection {
+            card.alpha = 1
+            if card.tag == actualCardActive {
+                let imageBackName = "cardImage\(card.tag)"
+                card.setImage(UIImage(named: imageBackName), for: .normal)
+            }
+        }
+        
+    }
+    
+    
+    
+    
     func setDefaultBackgroundCards(){
         for card in cardsCollection {
             card.setImage(#imageLiteral(resourceName: "BackCard"), for: .normal)
+        }
+    }
+    
+    func setNumbersOnCards(){
+        for label in numbersOnCards {
+            label.text = String(digitsValuesOnCards[label.tag - 1])
         }
     }
     
