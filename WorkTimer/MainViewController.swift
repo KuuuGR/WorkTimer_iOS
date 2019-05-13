@@ -18,14 +18,12 @@ class MainViewController: UIViewController {
     @IBOutlet var numbersOnCards: [UILabel]!
     
     
-    
-    
     var myWorkingData = workingData()
     var actualDateCount: Date?
     var actualButtonPressed: Int = 0
     
     var digitsValuesOnCards = Array(repeating: 0, count: 13)
-    var actualCardActive: Int = 0
+    var actualCardActive: Int = 13
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +39,10 @@ class MainViewController: UIViewController {
     @IBAction func resetButtonPressed(_ sender: Any) {
         for i in 0..<13 {
             digitsValuesOnCards[i] = 0
+            myWorkingData.cardTimeSec[i] = 0
         }
+        myWorkingData.startTime = nil
+        actualCardActive = 13
         setDefaultBackgroundCards()
         setNumbersOnCards()
     }
@@ -73,17 +74,30 @@ class MainViewController: UIViewController {
     
     @IBAction func cardsButtonPressed(_ sender: UIButton) {
         print(sender.tag)
+        
+        // make start date (works on first start)
+        if (myWorkingData.startTime == nil) && (actualCardActive == 13) {
+            myWorkingData.startTime = Date()
+            actualDateCount = Date()
+            actualCardActive = sender.tag
+        }
+        
+        let TimeToAdd = actualDateCount!.timeIntervalSinceNow * -1
+        addTimeToEvent(buttonNr: actualCardActive, value: Int(TimeToAdd))
+        actualDateCount = Date()
         actualCardActive = sender.tag
+        print(myWorkingData) //TODO: Remove line
+        
         for card in cardsCollection {
             if card.tag == sender.tag {
                 let imageBackName = "cardImage\(sender.tag)"
                 setDefaultBackgroundCards()
                 card.setImage(UIImage(named: imageBackName), for: .normal)
-                digitsValuesOnCards[sender.tag - 1] += 1
+                digitsValuesOnCards[sender.tag] += 1
             }
             for label in numbersOnCards {
                 if sender.tag == label.tag {
-                    label.text = String(digitsValuesOnCards[label.tag - 1])
+                    label.text = String(digitsValuesOnCards[label.tag])
                 }
             }
         }
@@ -125,22 +139,25 @@ class MainViewController: UIViewController {
     
     func setNumbersOnCards(){
         for label in numbersOnCards {
-            label.text = String(digitsValuesOnCards[label.tag - 1])
+            label.text = String(digitsValuesOnCards[label.tag])
         }
     }
     
     func addTimeToEvent(buttonNr: Int, value: Int) {
         
-        switch buttonNr {
-        case 1:
-            myWorkingData.coffeTimeSec += value
-        case 2:
-            myWorkingData.workTimeSec += value
-        case 3:
-            myWorkingData.eatTimeSec += value
-        default:
-            return
-        }
+        
+        myWorkingData.cardTimeSec[buttonNr] += value
+        
+//        switch buttonNr {
+//        case 1:
+//            myWorkingData.coffeTimeSec += value
+//        case 2:
+//            myWorkingData.workTimeSec += value
+//        case 3:
+//            myWorkingData.eatTimeSec += value
+//        default:
+//            return
+//        }
     }
     
     func onlyOneButtonMarked(_ button: UIButton) {
@@ -179,7 +196,7 @@ class MainViewController: UIViewController {
     func secondsToHoursMinutes(seconds: Int) -> String {
         let actualHours = seconds / 3600
         let actualMinutes = (seconds % 3600) / 60
-        return ("\(actualHours)H \(actualMinutes)m")
+        return ("\(actualHours)h \(actualMinutes)m")
     }
     
     

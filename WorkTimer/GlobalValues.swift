@@ -15,6 +15,8 @@ struct workingData {
     var coffeTimeSec: Int = 0
     var workTimeSec: Int = 0
     var eatTimeSec: Int = 0
+    var cardTimeSec: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
 }
 
 
