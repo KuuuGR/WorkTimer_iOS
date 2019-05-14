@@ -294,6 +294,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="dgk-G2-uzR">
+                                <rect key="frame" x="99" y="0.0" width="469" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dgk-G2-uzR" secondAttribute="height" multiplier="5:4" id="Gij-AF-rn8"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tog-Lr-xQ6" userLabel="Next Button">
                                 <rect key="frame" x="612" y="5" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -350,6 +356,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UgA-rJ-VKM" firstAttribute="top" secondItem="aeX-yG-GAI" secondAttribute="bottom" constant="8" id="0mO-Aa-VTe"/>
+                            <constraint firstItem="dgk-G2-uzR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1Kq-qD-tgY"/>
                             <constraint firstItem="aNX-14-QIW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2a3-E4-1KF"/>
                             <constraint firstItem="uBb-eW-Xc8" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="trailing" constant="8" id="39P-8S-I0L"/>
                             <constraint firstItem="xRe-Ew-ELN" firstAttribute="leading" secondItem="uBb-eW-Xc8" secondAttribute="trailing" constant="8" id="3NU-65-3F2"/>
@@ -400,11 +407,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tog-Lr-xQ6" secondAttribute="trailing" constant="5" id="rdf-vk-32k"/>
                             <constraint firstItem="UgA-rJ-VKM" firstAttribute="leading" secondItem="6YR-pt-Kmv" secondAttribute="trailing" constant="8" id="rpM-9k-Hcw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uBb-eW-Xc8" secondAttribute="bottom" constant="15" id="sD3-8g-6Ub"/>
+                            <constraint firstItem="dgk-G2-uzR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="sHj-sk-0tn"/>
                             <constraint firstItem="ltP-o3-ffE" firstAttribute="top" secondItem="EUw-Sr-eFv" secondAttribute="bottom" constant="8" id="tPM-tB-zVF"/>
                             <constraint firstItem="tog-Lr-xQ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="tql-s4-WmB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NmK-NV-GGh" secondAttribute="bottom" constant="20" id="uz0-xa-yFS"/>
                             <constraint firstItem="vQB-k5-1p0" firstAttribute="top" secondItem="tog-Lr-xQ6" secondAttribute="bottom" id="vPk-03-cSd"/>
                             <constraint firstItem="xRe-Ew-ELN" firstAttribute="leading" secondItem="NmK-NV-GGh" secondAttribute="trailing" constant="14" id="wZ0-A1-4fj"/>
+                            <constraint firstItem="dgk-G2-uzR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wt3-yk-UvN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o7H-82-4Ng" secondAttribute="trailing" constant="5" id="wyp-Jt-B9Z"/>
                             <constraint firstItem="EUw-Sr-eFv" firstAttribute="leading" secondItem="aeX-yG-GAI" secondAttribute="trailing" constant="8" id="xaN-D3-T2S"/>
                             <constraint firstItem="6YR-pt-Kmv" firstAttribute="top" secondItem="0qO-Ym-0yf" secondAttribute="bottom" constant="13" id="zCt-eE-qQX"/>
@@ -412,6 +421,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bonusImageView" destination="dgk-G2-uzR" id="LHH-Dg-du7"/>
                         <outletCollection property="cardsCollection" destination="gxM-kx-tR2" collectionClass="NSMutableArray" id="DnW-1i-PfN"/>
                         <outletCollection property="cardsCollection" destination="p9k-fK-2ND" collectionClass="NSMutableArray" id="6Kz-VB-8Ov"/>
                         <outletCollection property="cardsCollection" destination="XyV-Bc-zrB" collectionClass="NSMutableArray" id="4km-3C-YVg"/>
@@ -458,6 +468,7 @@
         <image name="BackCard" width="1231" height="1236"/>
         <image name="ResetButton" width="650" height="650"/>
         <image name="Screen3" width="1245" height="1067"/>
+        <image name="girl" width="500" height="400"/>
         <image name="info" width="1361" height="1465"/>
     </resources>
 </document>

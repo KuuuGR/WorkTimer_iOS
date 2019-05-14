@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
     var digitsValuesOnCards = Array(repeating: 0, count: 13)
     var actualCardActive: Int = 13
     
+    @IBOutlet weak var bonusImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNumbersOnCards()
@@ -89,6 +91,13 @@ class MainViewController: UIViewController {
                 card.setImage(UIImage(named: imageBackName), for: .normal)
             }
         }
+        
+        //show bonus image if conditions are met
+        bonusImageView.isHidden = true
+        if digitsValuesOnCards == [0, 6, 0, 0, 6, 0, 0, 6, 0, 0, 6, 0, 0] {
+        bonusImageView.isHidden = false
+        }
+        print(digitsValuesOnCards)
     }
     
     func setDefaultBackgroundCards() {
@@ -110,6 +119,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func summaryButtonPressed(_ sender: Any) {
+        
         if actualCardActive != 13 {
             setTimesTupple()
             setSummaryTupple()
