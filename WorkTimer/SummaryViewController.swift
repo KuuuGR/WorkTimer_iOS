@@ -35,20 +35,28 @@ class SummaryViewController: UIViewController {
             return logTimeLabel.text = "back & tap the card"
         }
             let newstr = summaryTupple[2]
-            var token = newstr.components(separatedBy: ["h", "m", "s"])
-        
-            logTimeLabel.text = ("\(token[0])h \(token[1])m")
+            var token = newstr.components(separatedBy: ["h", "m", "s", " "])
+            // token[0] - hours, token[3] - minutes, token[6] - seconds
+            logTimeLabel.text = ("\(token[0])h \(token[3])m")
         
             if (Int(token[0]) ?? 0) < 6 {
-                logTimeLabel.textColor = UIColor(red: 181/255, green: 64/255, blue: 44/255, alpha: 1.00)
+                logTimeLabel.textColor = UIColor(red: 234/255, green: 57/255, blue: 57/255, alpha: 1.00)
+                //(181/255;64/255;44/255/) -> old Red color
             } else {
-                logTimeLabel.textColor = UIColor(red: 60/255, green: 178/255, blue: 226/255, alpha: 1.00)
+                logTimeLabel.textColor = UIColor(red: 70/255, green: 214/255, blue: 19/255, alpha: 1.00)
+                //(60/255;178/255;226/255) -> old Blue color
             }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    deinit {
+        if resultTimeLabels != nil {
+            resultTimeLabels.removeAll()
+        }
     }
 
     @IBAction func BackButtonAction(_ sender: Any) {

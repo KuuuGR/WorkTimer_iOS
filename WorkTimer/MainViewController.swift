@@ -42,7 +42,6 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func cardsButtonPressed(_ sender: UIButton) {
-        print(sender.tag)
         
         // make start date (works on first start)
         if (myWorkingData.startTime == nil) && (actualCardActive == 13) {
@@ -73,7 +72,6 @@ class MainViewController: UIViewController {
     
     // info : Show all cards on tap
     @IBAction func infoButtonTouched(_ sender: UIButton) {
-        print("Preston")
         for card in cardsCollection {
                 let imageBackName = "cardImage\(card.tag)"
                 card.setImage(UIImage(named: imageBackName), for: .normal)
@@ -82,7 +80,6 @@ class MainViewController: UIViewController {
     }
     // info : Hide all cards on relase (only active is stay) 
     @IBAction func infoButtonReleased(_ sender: UIButton) {
-        print("Unpreston")
         setDefaultBackgroundCards()
         
         for card in cardsCollection {
@@ -146,10 +143,9 @@ class MainViewController: UIViewController {
         summaryTupple[0] = stringDataFromDate(theDate: myWorkingData.startTime)// start work time
         summaryTupple[1] = stringDataFromDate(theDate: myWorkingData.startTime, addSec: 8 * 60 * 60)
         
-        for i in 0...12 {
-            if i == 0 || i >= 7 {
+        myWorkingData.summaryTime = myWorkingData.cardTimeSec[0]
+        for i in 7...12 {
           myWorkingData.summaryTime += myWorkingData.cardTimeSec[i]
-            }
         }
         
         summaryTupple[2] = secondsToHoursMinutesSeconds(seconds: myWorkingData.summaryTime)
