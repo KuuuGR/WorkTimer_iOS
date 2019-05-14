@@ -103,6 +103,9 @@ class MainViewController: UIViewController {
     func setDefaultBackgroundCards() {
         for card in cardsCollection {
             card.setImage(#imageLiteral(resourceName: "BackCard"), for: .normal)
+            if card.tag == 0 {
+                card.setImage(#imageLiteral(resourceName: "BackCard_dark"), for: .normal)
+            }
         }
     }
     
