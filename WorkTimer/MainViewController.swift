@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {
-        for i in 0..<13 {
+        for i in 0...12 {
             digitsValuesOnCards[i] = 0
             myWorkingData.cardTimeSec[i] = 0
         }

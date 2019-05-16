@@ -12,9 +12,6 @@ class SummaryViewController: UIViewController {
     
     @IBOutlet weak var workStartLabel: UILabel!
     @IBOutlet weak var workEndLabel: UILabel!
-    @IBOutlet weak var jobLabel: UILabel!
-    @IBOutlet weak var drinkLabel: UILabel!
-    @IBOutlet weak var eatLabel: UILabel!
     @IBOutlet weak var logTimeLabel: UILabel!
     
     @IBOutlet var resultTimeLabels: [UILabel]!
